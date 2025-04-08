@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "169818789695",
+    "project_id": "vital-cafe-notification",
+    "storage_bucket": "vital-cafe-notification.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:169818789695:android:7d1be58f5c144025a2e58a",
+        "android_client_info": {
+          "package_name": "com.group.cafe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCulzzKWvpkPO8XwSxyWnbxY18j0urVFJ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

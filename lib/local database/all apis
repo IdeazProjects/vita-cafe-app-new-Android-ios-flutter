@@ -1,0 +1,356 @@
+
+
+  @POST("api/auth/user-complain")
+    Call<ResponseBody> user_complain(@Field("user_id") String user_id,
+                                     @Field("reason") String reason,
+                                     @Field("order_id") String order_id,
+                                     @Field("details") String details,
+                                     @Field("issue") String issue);
+  @FormUrlEncoded
+    @POST("api/auth/latest-five-order")
+    Call<ResponseBody> get_latest_five_order(@Field("user_id") int user_id);
+
+
+
+  @POST("api/auth/save-pos-order")
+    Call<ResponseBody> book_pos_order(@Body RequestBody object);
+
+  Call<ResponseBody> updateProfile(@Field("user_name") String user_name,
+                                     @Field("contact") String contact,
+                                     @Field("email") String email,
+                                     @Field("id") int id
+    );
+
+  @FormUrlEncoded
+    @POST("api/auth/password-update")
+    Call<ResponseBody> updatePassword(@Field("password") String password,
+                                      @Field("old_password") String old_password,
+                                      @Field("id") int id);
+
+    @FormUrlEncoded
+    @POST("api/auth/get-pos-order")
+    Call<ResponseBody> get_pos_current_order(@Field("e_cafe_id") String e_cafe_id
+    );
+
+    @FormUrlEncoded
+    @POST("api/auth/get-rider-order")
+    Call<ResponseBody> get_rider_current_order(@Field("e_cafe_id") String e_cafe_id,
+                                               @Field("company_id") String company_id,
+                                               @Field("rider_id") String rider_id);
+
+    @FormUrlEncoded
+    @POST("api/auth/get-pos-ready-item-list")
+    Call<ResponseBody> get_cafe_ready_items(@Field("cafe_id") int cafe_id);
+
+    @FormUrlEncoded
+    @POST("api/auth/add-pos-ready-item-list")
+    Call<ResponseBody> add_cafe_selected_item(@Field("cafe_id") int cafe_id,
+                                              @Field("product_id") int product_id);
+
+    @FormUrlEncoded
+    @POST("api/auth/remove-pos-ready-item-list")
+    Call<ResponseBody> delete_cafe_selected_item(@Field("cafe_id") int cafe_id,
+                                                 @Field("product_id") int product_id);
+    @FormUrlEncoded
+    @POST("api/auth/get-ready-product")
+    Call<ResponseBody> get_Cafe_ready_Items(@Field("cafe_id") int cafe_id,
+                                            @Field("user_id") int user_id
+                                           );
+@FormUrlEncoded
+    @POST("api/auth/order-status")
+    Call<ResponseBody> update_order_status(@Field("id") int order_id,
+                                           @Field("status") int status,
+                                           @Field("rider_id") int rider_id
+    );
+
+    @FormUrlEncoded
+    @POST("api/auth/get-order-status")
+    Call<ResponseBody> get_order_status(@Field("id") int order_id
+    );
+
+    @FormUrlEncoded
+    @POST("api/auth/get-order-review")
+    Call<ResponseBody> get_order_review(@Field("order_id") int order_id
+    );
+
+
+ @FormUrlEncoded
+    @POST("api/auth/get-ready-product-cafe")
+    Call<ResponseBody> get_Cafe_ready_Items_customer(@Field("cafe_id") int cafe_id,
+                                            @Field("user_id") int user_id,
+                                            @Field("subCategoryId") int subCategoryId);
+
+    @FormUrlEncoded
+    @POST("api/auth/get-ready-sub-category-test")
+    Call<ResponseBody> get_Cafe_ready_Items_categories(@Field("categoryId") int categoryId
+                                           );
+
+    
+    @FormUrlEncoded
+    @POST("api/auth/get-distributor-category")
+    Call<ResponseBody> get_distributor_categories(@Field("distributorId") int distributorId);
+
+    @FormUrlEncoded
+    @POST("api/auth/get-distributor-product")
+    Call<ResponseBody> get_distributor_categories_products(@Field("categoryId") int categoryId,
+                                                           @Field("distributorId") int distributorId, 
+                                                           @Field("cafe_id") int cafe_id);
+
+    @POST("api/auth/save-distributor-order")
+    Call<ResponseBody> book_pos_inventory_order(@Body RequestBody object);
+
+    @FormUrlEncoded
+    @POST("api/auth/get-distributor-order")
+    Call<ResponseBody> get_distributor_order(@Field("cafe_id") int cafe_id
+    );
+
+    @FormUrlEncoded
+    @POST("api/auth/get-distributor-order-detail")
+    Call<ResponseBody> get_distributor_order_detail(@Field("order_id") int order_id
+    );
+    @FormUrlEncoded
+    @POST("api/auth/get-distributor-verify-order-detail")
+    Call<ResponseBody> get_distributor_verify_order_detail(@Field("order_id") int order_id
+    );
+    @FormUrlEncoded
+    @POST("api/auth/updateRiderLocation")
+    Call<ResponseBody> update_rider_location(@Field("rider_id") String rider_id,
+                                             @Field("longitude") String longitude,
+                                             @Field("latitude") String latitude
+    );
+['monthly']['']
+    @FormUrlEncoded
+    @POST("api/auth/getRiderLocation")
+    Call<ResponseBody> get_rider_location(@Field("rider_id") String rider_id);
+
+    @FormUrlEncoded
+    @POST("api/auth/pos-ledger-count")
+    Call<ResponseBody> pos_ledger_count(@Field("cafe_id") String cafe_id);
+
+    @FormUrlEncoded
+    @POST("api/auth/pos-walkin-customer-order")
+    Call<ResponseBody> pos_walkin_customer_order(@Field("cafe_id") String cafe_id);
+
+    @FormUrlEncoded
+    @POST("api/auth/user-curent-orders")
+    Call<ResponseBody> user_curent_orders(@Field("user_id") String user_id);
+
+ 
+
+
+    @POST("api/auth/save-e-cafe-inventory")
+    Call<ResponseBody> approved_inventory_order(@Body RequestBody object);
+
+    @FormUrlEncoded
+    @POST("api/auth/search-product")
+    Call<ResponseBody> store_search_product(@Field("distributor_id") int distributor_id,
+                                            @Field("user_id") int user_id,
+                                            @Field("search_key") String search_key);
+
+    @FormUrlEncoded
+    @POST("api/auth/get-stock-confirm-order")
+    Call<ResponseBody> get_stock_confirm_order(@Field("cafe_id") int cafe_id
+    );
+
+    @FormUrlEncoded
+    @POST("api/auth/get-stock-confirm-order-detail")
+    Call<ResponseBody> get_stock_confirm_order_detail(@Field("stock_id") int stock_id
+    );
+
+    @FormUrlEncoded
+    @POST("api/auth/update-cart-price-after-login")
+    Call<ResponseBody> update_cart_price_after_login(@Field("user_id") int user_id,
+                                                     @Field("productId") int productId
+    );
+
+
+   
+
+    @POST("api/auth/save-order")
+    Call<ResponseBody> book_order(@Body RequestBody object);
+
+    
+
+    @FormUrlEncoded
+    @POST("api/auth/get-e-cafe-user-order")
+    Call<ResponseBody> get_cafe_order_list(@Field("user_id") int user_id);
+
+    @FormUrlEncoded
+    @POST("api/auth/get-e-cafe-user-order-detail")
+    Call<ResponseBody> get_cafe_order_list_summary(@Field("order_id") int order_id);
+
+
+
+    @FormUrlEncoded
+    @POST("api/auth/profile-update")
+    Call<ResponseBody> updateProfile(@Field("user_name") String user_name,
+                                     @Field("contact") String contact,
+                                     @Field("email") String email,
+                                     @Field("id") int id
+    );
+
+  @FormUrlEncoded
+    @POST("api/auth/checkRememberToken")
+    Call<ResponseBody> checkRememberToken(@Field("remember_token") String remember_token
+    );
+
+    @FormUrlEncoded
+    @POST("api/auth/forgot-password")
+    Call<ResponseBody> forgot_password_email(@Field("email") String email
+    );
+
+    @FormUrlEncoded
+    @POST("api/auth/forgot-password")
+    Call<ResponseBody> forgot_password(@Field("email") String email,
+                                       @Field("password") String password
+    );
+
+    @FormUrlEncoded
+    @POST("api/auth/add-credit-user")
+    Call<ResponseBody> Credit_add_User(@Field("contact") String contact,
+                                       @Field("cafeId") Integer cafeId,
+                                       @Field("limitAmount") Integer limitAmount
+    );
+
+    @FormUrlEncoded
+    @POST("api/auth/credit-user-list")
+    Call<ResponseBody> get_credit_user_list(@Field("cafeId") Integer cafeId);
+
+    @FormUrlEncoded
+    @POST("api/auth/credit-user-active-deactive")
+    Call<ResponseBody> set_user_active_or_inactive(@Field("userId") Integer userId,
+                                                   @Field("cafeId") Integer cafeId,
+                                                   @Field("status") Integer status);
+
+    @FormUrlEncoded
+    @POST("api/auth/add-debit")
+    Call<ResponseBody> add_debit_amount(@Field("userId") Integer userId,
+                                        @Field("cafeId") Integer cafeId,
+                                        @Field("amount") Integer amount);
+
+  @FormUrlEncoded
+    @POST("api/auth/get-cafe-rider-list")
+    Call<ResponseBody> get_cafe_riders(@Field("cafeId") Integer cafeId
+    );
+
+    @FormUrlEncoded
+    @POST("api/auth/rider-active")
+    Call<ResponseBody> set_rider_active_status(
+                 @Field("riderId") Integer riderId ,
+                @Field("status") Integer status
+    );
+
+
+    @FormUrlEncoded
+    @POST("api/auth/user-amount")
+    Call<ResponseBody> get_user_wallet_amount(@Field("userId") Integer userId
+            , @Field("cafeId") Integer cafeId
+    );
+
+    @FormUrlEncoded
+    @POST("api/auth/credit-user-cafe-list")
+    Call<ResponseBody> get_credit_user_cafe_list(@Field("userId") Integer userId
+    );
+
+    @FormUrlEncoded
+    @POST("api/auth/credit-debit-user-list")
+    Call<ResponseBody> get_credit_debit_user_list(@Field("cafeId") Integer cafeId
+            , @Field("userId") Integer userId
+    );
+
+/*   */
+
+    @POST("api/auth/add-cafe-time")
+    Call<ResponseBody> set_Cafe_timing(@Body RequestBody object);
+
+    @FormUrlEncoded
+    @POST("api/auth/get-cafe-time")
+    Call<ResponseBody> get_Cafe_timing(@Field("cafeId") Integer cafeId
+    );
+
+    @FormUrlEncoded
+    @POST("api/auth/get-cafe-time-list")
+    Call<ResponseBody> get_Cafe_timing_list(@Field("cafeId") Integer cafeId
+    );
+
+    @FormUrlEncoded
+    @POST("api/auth/user-contact-check")
+    Call<ResponseBody> check_user_exist(@Field("contact") String contact
+    );
+
+    @FormUrlEncoded
+    @POST("api/auth/otp")
+    Call<ResponseBody> OTP_Code(@Field("contact") String contact
+            ,@Field("code") String code
+    );
+
+    @FormUrlEncoded
+    @POST("api/auth/add-rider")
+    Call<ResponseBody> add_rider(@Field("username") String username,
+                                       @Field("contact") String contact,
+                                       @Field("email") String email,
+                                       @Field("password") String password,
+                                       @Field("cafeid") Integer cafeid
+    );
+
+    @FormUrlEncoded
+    @POST("api/auth/list-cafe-riders")
+    Call<ResponseBody> get_cafe_rider_list(@Field("cafeid") Integer cafeid
+    );
+
+    @FormUrlEncoded
+    @POST("api/auth/delete-cafe-rider")
+    Call<ResponseBody> delete_cafe_rider(@Field("id") Integer id
+    );
+
+    @FormUrlEncoded
+    @POST("api/auth/cafe-rider-status")
+    Call<ResponseBody> get_rider_active_status(@Field("id") Integer id
+    );
+
+    @FormUrlEncoded
+    @POST("api/auth/order-cancel")
+    Call<ResponseBody> cancel_order_by_cafe(@Field("id") Integer id
+    );
+
+    @FormUrlEncoded
+    @POST("api/auth/order-reject")
+    Call<ResponseBody> order_rejected_by_rider(@Field("id") Integer id
+    );
+
+    @FormUrlEncoded
+    @POST("api/auth/order-message")
+    Call<ResponseBody> chat_message_fcm(@Field("id") Integer id,
+                                        @Field("userType") Integer userType,
+                                        @Field("textMsg") String textMsg
+    );
+    
+
+ @FormUrlEncoded
+    @POST("api/auth/order-feedback")
+    Call<ResponseBody> cafe_order_feedback(@Field("user_id") int user_id,
+                                        @Field("order_id") int order_id,
+                                        @Field("rating") int rating,
+                                        @Field("feedback") String feedback,
+                                        @Field("shop_id") int cafe_id );
+
+
+    @POST("api/auth/takeawayaddress")
+    Call<ResponseBody> take_away_address();
+
+
+
+
+
+
+
+
+
+
+
+
+
+//accounts my inventory complete order api below
+https://vitalcafe.com.pk/api/auth/get-pos-order?e_cafe_id=0
+
+
